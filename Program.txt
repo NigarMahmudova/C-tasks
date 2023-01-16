@@ -1,0 +1,106 @@
+﻿using System;
+
+namespace FirstApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Task 1
+            Console.WriteLine("Number1...");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Number2...");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Number3...");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+
+            if (num1 <= num2 && num1 <= num3)
+            {
+                Console.WriteLine(num1);
+            }
+            else if (num2 <= num1 && num2 <= num3)
+            {
+                Console.WriteLine(num2);
+            }
+            else
+            {
+                Console.WriteLine(num3);
+            }
+
+
+            //Task 2
+            int[] array = new int[5];
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine($"{i}-ci element...");
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int max = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (max < array[i])
+                {
+                    max = array[i];
+                }
+            }
+            Console.WriteLine("Max = " + max);
+
+
+            //Task 3
+            int sum = 0;
+            int count = 0;
+            int[] numbers1 = new int[4];
+            for (int i = 0; i < numbers1.Length; i++)
+            {
+                Console.WriteLine($"{i}-ci element...");
+                numbers1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < numbers1.Length; i++)
+            {
+                if (numbers1[i] % 3 == 0)
+                {
+                    sum += numbers1[i];
+                    count++;
+                }
+            }
+
+            if (count == 0)
+            {
+                Console.WriteLine("3-e bolunen eded yoxdur!");
+            }
+            else
+            {
+                Console.WriteLine("Netice..." + sum / count);
+            }
+
+
+            //Task 4
+            int counter = 0;
+            int[]  numbers2= new int[4];
+            for (int i = 0; i < numbers2.Length; i++)
+            {
+                Console.WriteLine($"{i}-ci element...");
+                numbers2[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < numbers2.Length; i++)
+            {
+                if (numbers2[i] > 99 && numbers2[i]<1000)
+                {
+                    counter++;
+                }
+            }
+
+            if (counter == 0)
+            {
+                Console.WriteLine("3 reqemli eded yoxdur.");
+            }
+            else
+            {
+                Console.WriteLine("3 reqemli eded var.");
+            }
+
+        }
+    }
+}
